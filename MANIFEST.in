@@ -1,0 +1,5 @@
+recursive-include src/k9ert/specterext/taxtheft/templates *
+recursive-include src/k9ert/specterext/taxtheft/static *
+recursive-include src/k9ert/specterext/taxtheft/*/LC_MESSAGES *.mo
+recursive-include src/k9ert/specterext/taxtheft/translations/*/LC_MESSAGES *.po
+include requirements.txt

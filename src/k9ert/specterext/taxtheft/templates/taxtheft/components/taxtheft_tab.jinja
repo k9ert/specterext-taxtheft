@@ -1,0 +1,8 @@
+{% extends "taxtheft/base.jinja" %}
+{% block main %}
+    <img src="{{ url_for(service.id +'_endpoint' + '.static', filename=service.logo) }}" width="300"/>    
+    {% from 'taxtheft/components/taxtheft_menu.jinja' import taxtheft_menu with context %}
+    {{ taxtheft_menu(tab) }}
+    {% block content %}
+    {% endblock %}
+{% endblock %}
