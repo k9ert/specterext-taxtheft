@@ -1,5 +1,5 @@
 import logging
-from k9ert.specterext.spotbit.ccxt_cache import CcxtCache
+from k9ert.specterext.taxtheft.ccxt_cache import CcxtCache
 
 
 def test_CcxtCache(caplog, empty_data_folder):
@@ -10,4 +10,3 @@ def test_CcxtCache(caplog, empty_data_folder):
     print(mydf)
     mydf = cc.ohlcv(date, 'BTC/EUR', '1d', limit=5)
     print(mydf)
-    assert False

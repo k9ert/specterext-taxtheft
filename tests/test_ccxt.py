@@ -1,7 +1,6 @@
 import ccxt
 import pandas as pd
-
-from k9ert.specterext.spotbit.ccxt import ohlcv
+from k9ert.specterext.taxtheft.ccxt import ohlcv
 import datetime
 
 # manual: https://docs.ccxt.com/en/latest/manual.html
@@ -10,8 +9,9 @@ def test_essentials():
     
     print(ccxt.exchanges) # print a list of all available exchange classes
     print("Bitstamp:")
-    print(ccxt.exchanges["bitstamp"])
-    assert False
+    print(ccxt.bitstamp())
+    #assert False
+
 
 
 
@@ -20,7 +20,7 @@ def test_ohlcv():
     df = ohlcv(date, 'BTC/EUR', '1d', limit=5)
     print(df)
     print("-----------")
-    assert False
+
     df = ohlcv(date, 'BTC/EUR', '1d', limit=5)
 
     df = ohlcv(date, 'BTC/EUR', '1d', limit=5)
@@ -30,4 +30,3 @@ def test_ohlcv():
     
     #print(df['date'].values)
     
-    assert False
