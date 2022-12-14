@@ -11,7 +11,9 @@ This is a Specter Extension to help to calculate tax obligation. It's work in pr
 
 After creation, you can get the extension to run like this in your
   development environment:
-
+      
+      virtualenv --python=python3 .env
+      . ./.env/bin/activate
       pip3 install -e .
       python3 -m cryptoadvance.specter server --config DevelopmentConfig --debug
       # Point your browser to http://localhost:25441
