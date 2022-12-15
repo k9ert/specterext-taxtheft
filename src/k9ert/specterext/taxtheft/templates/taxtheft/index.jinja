@@ -4,11 +4,39 @@
 {% block content %}
     <br><br>
     <div class="tagline">&ldquo; TaxtheftService 4thewin.&rdquo;</div>
+
+    <form action="https://example.com" class="my-form">
+        <label>
+          date:
+          <input type="date" name="bday" />
+        </label>
+        <button onclick="request_quote">clickme</button>
+        <p><button>Submit</button></p>
+      </form>
+      
 {% endblock %}
 
 
 
 {% block scripts %}
     <script>
+        async function request_quote() {
+            showNotification(`Asking ...`, 0);
+            let url = `{{ url_for('auth_endpoint.toggle_hide_sensitive_info') }}`;
+            var formData = new FormData();
+            
+            const result = await send_request("/svc/taxtheft/ohlcv")
+            if (result) {
+                return false
+            };
+        }
+
+
+        document.getElementsByClassName('my-form')[0].addEventListener('submit',function(){ 
+            alert('Form submitted'); 
+            
+            return false; 
+        });
+
     </script>
 {% endblock %}
