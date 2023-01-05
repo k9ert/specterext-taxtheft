@@ -30,7 +30,11 @@ def index():
         "taxtheft/index.jinja",
     )
 
-
+@taxtheft_endpoint.route("/ohlcv")
+@login_required
+@app.csrf.exempt
+def ohlcv():
+    return {}
 
 @taxtheft_endpoint.route("/transactions")
 @login_required

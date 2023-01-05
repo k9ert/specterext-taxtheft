@@ -10,4 +10,3 @@ def test_CcxtCache(caplog, empty_data_folder):
     print(mydf)
     mydf = cc.ohlcv(date, 'BTC/EUR', '1d', limit=5)
     print(mydf)
-    assert False
