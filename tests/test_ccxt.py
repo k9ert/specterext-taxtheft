@@ -1,7 +1,7 @@
 import ccxt
 import pandas as pd
 
-from k9ert.specterext.spotbit.ccxt import ohlcv
+from k9ert.specterext.taxtheft.ccxt import ohlcv
 import datetime
 
 # manual: https://docs.ccxt.com/en/latest/manual.html
