@@ -10,3 +10,9 @@ elmd-conn.json
 prevent_mining
 src/cryptoadvance/specterext/taxtheft/_version.py
 build
+dist
+tests/test_data/*
+
+spectrum.log
+data
+.gitignore

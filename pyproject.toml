@@ -1,6 +1,6 @@
 [build-system]
 requires = [
-    "setuptools", "setuptools-scm"
+    "setuptools>=45", "setuptools_scm[toml]>=6.2"
 ]
 build-backend = "setuptools.build_meta"
 
@@ -31,7 +31,7 @@ classifiers =[
 dynamic=["version"]
 
 [tool.setuptools_scm]
-write_to = "src/cryptoadvance/specterext/taxtheft/_version.py"
+write_to = "src/k9ert/specterext/taxtheft/_version.py"
 
 [project.optional-dependencies]
 test = [
