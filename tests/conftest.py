@@ -36,6 +36,7 @@ logger = logging.getLogger(__name__)
 
 pytest_plugins = [
     "conftest_visibility",
+    "fix_spectrum_mainchain",
     "fix_ghost_machine",
     "fix_keys_and_seeds",
     "fix_devices_and_wallets",
