@@ -8,3 +8,5 @@ node_modules
 btcd-conn.json
 elmd-conn.json
 prevent_mining
+src/cryptoadvance/specterext/taxtheft/_version.py
+build
