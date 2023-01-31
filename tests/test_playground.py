@@ -8,6 +8,9 @@ from cryptoadvance.specter.device import Device
 from cryptoadvance.specter.wallet import Wallet
 import json
 import logging
+import time
+
+logger = logging.getLogger(__name__)
 
 
 # Let spectrum run after the test is finished
@@ -27,16 +30,17 @@ def test_something(caplog, spectrum_mainchain_rpc, devices_filled_data_folder):
         rpc,
         "main",
         dm,
+        allow_threading_for_testing=False
     )
-    if wm.failed_load_wallets:
-        wm.create_wallet("wallet", 1, "wpkh", [device.keys[0]], [device])
-
     
 
-
-    #wallet: Wallet = Wallet()
+    logger.info("Creating wallet ...")
+    wallet: Wallet = wm.create_wallet("wallet", 1, "wpkh", [device.keys[0]], [device])
+    wallet.update_balance()
+    time.sleep(1)
     
-    wallet: Wallet = wm.wallets["specter/wallet_2"]
-    
-    print(wallet.txlist())
+    logger.info(f"wallet.txlist length: {len(wallet.txlist())}")
+    logger.info(f"utxo: {wallet.check_utxo()}")
+    logger.info(f"addresses: {wallet.check_addresses()}")
+    logger.info(f"addresses: {wallet.addresses}")
     assert False
